@@ -1,16 +1,12 @@
+import { HttpProd } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { EMPTY, Observable, catchError, map } from 'rxjs';
 import { Produto } from '../Models/Produto.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
-  public get http(): HttpProd {
-    return this._http;
-  }
-  public set http(value: HttpProd) {
-    this._http = value;
-  }
 
   //Criar a variavel com a URL da API
   private url = 'http://localhost:3000/produtos';
@@ -22,7 +18,7 @@ export class ProdutoService {
 
 
   //Criar uma instancia do Httpprod
-  constructor(private _http: HttpProd) { }
+  constructor(private http:HttpProd) { }
 
   // MÉTODOS DO CRUD COM A API
 

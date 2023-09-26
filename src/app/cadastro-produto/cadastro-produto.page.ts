@@ -7,30 +7,32 @@ import { ProdutoService } from '../services/produto.service';
   templateUrl: './cadastro-produto.page.html',
   styleUrls: ['./cadastro-produto.page.scss'],
 })
-export class CadastroUsuarioPage implements OnInit {
+export class CadastroProdutoPage implements OnInit {
 
   produto: Produto = {
     nome: '',
-    email: '',
-    senha: ''
+    id: 0,
+    preco: 0,
+    descricao: '',
+    validade: ''
   };
-  confirmaSenha = '';
+  confirmaProduto = '';
 
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
   }
 
-  salvarUsuario() {
-    if (this.confirmaSenha.trim() && this.usuario.senha.trim()) {
-      if (this.confirmaSenha == this.usuario.senha) {
-        this.userService.salvar(this.usuario).subscribe(retorno =>{
-          this.usuario = retorno;
-          alert("Sucesso! Usuario:" + this.usuario.id + "foi salvo");
+  salvarProduto() {
+    if (this.confirmaProduto.trim() && this.produto.nome.trim()) {
+      if (this.confirmaProduto == this.produto.nome) {
+        this.produtoService.salvar(this.produto).subscribe(retorno =>{
+          this.produto = retorno;
+          alert("Sucesso! Produto:" + this.produto.nome + "foi salvo");
         });
       }
       else {
-        alert("As senhas não são iguais!")
+        alert("Produto não encontrado")
       }
     }
     else {

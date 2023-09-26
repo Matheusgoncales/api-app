@@ -7,12 +7,7 @@ import { ProdutoService } from '../services/produto.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
-
-  constructor() {}
-
-}
-export class Tab1Page implements OnInit {
+export class Tab2Page implements OnInit {
 
   listaProdutos: Produto[]=[];
   produto?: Produto;
@@ -30,7 +25,7 @@ export class Tab1Page implements OnInit {
 
     // adicionamos uma variavel que guarda o retorno
     //e enviamos ela para uma funcão anonima
-    // demtrp da fimcap va,ps adicionar o retorno a variavel local
+    // demtro da fimcap vamos adicionar o retorno a variavel local
     this.produtoService.getAll().subscribe(retorno =>{
     // "as usuario[]" tenta covnerter o retorno para este tipo
     this.listaProdutos = retorno as Produto[];
