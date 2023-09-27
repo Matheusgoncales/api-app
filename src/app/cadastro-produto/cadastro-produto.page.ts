@@ -24,15 +24,13 @@ export class CadastroProdutoPage implements OnInit {
   }
 
   salvarProduto() {
-    if (this.confirmaProduto.trim() && this.produto.nome.trim()) {
-      if (this.confirmaProduto == this.produto.nome) {
+    debugger
+    if (this.produto.nome.trim()) {
+      if (this.produto.nome != "" ) {
         this.produtoService.salvar(this.produto).subscribe(retorno =>{
           this.produto = retorno;
-          alert("Sucesso! Produto:" + this.produto.nome + "foi salvo");
+          alert("Sucesso! Produto: " + this.produto.nome + " foi salvo");
         });
-      }
-      else {
-        alert("Produto não encontrado")
       }
     }
     else {

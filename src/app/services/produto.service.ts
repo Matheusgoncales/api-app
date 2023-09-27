@@ -1,4 +1,4 @@
-import { HttpProd } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable, catchError, map } from 'rxjs';
 import { Produto } from '../Models/Produto.model';
@@ -18,7 +18,7 @@ export class ProdutoService {
 
 
   //Criar uma instancia do Httpprod
-  constructor(private http:HttpProd) { }
+  constructor(private http:HttpClient) { }
 
   // MÉTODOS DO CRUD COM A API
 

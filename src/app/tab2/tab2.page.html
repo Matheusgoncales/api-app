@@ -13,13 +13,12 @@
   <ion-button expand="block" (click)="buscarPorID()">Buscar por ID</ion-button>
 
   <ion-button expand="block" (click)="buscarProduto()">Limpar Filtro</ion-button>
-  <div *ngIf="usuario">
+  <div *ngIf="produto">
     <h2 style="color: blue">Resultado da Busca:</h2>
     <ion-item>
       <ion-badge slot="start">{{produto.id}}</ion-badge>
     <ion-label>
       <h3>{{produto.nome}}</h3>
-      <!-- <p>{{usuario.email}}</p> -->
     </ion-label>
   </ion-item>
   </div>
@@ -28,7 +27,7 @@
     <ion-badge slot="start">{{produto.id}}</ion-badge>
     <ion-label>
       <h3>{{produto.nome}}</h3>
-      <!-- <p>{{user.email}}</p> -->
+      <p>{{produto.descricao}}</p>
     </ion-label>
   </ion-item>
 
